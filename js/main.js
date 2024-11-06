@@ -63,8 +63,8 @@ const modalJoin = document.getElementById('modal-join');
 const modalDonate = document.getElementById('modal-donate');
 
 // Obtener los botones que abren los modales
-const btnJoin = document.querySelector('.header__cta-button--join');
-const btnDonate = document.querySelector('.header__cta-button--donate');
+const btnJoin = document.getElementById('ctaJoin');
+const btnDonate = document.getElementById('ctaDonate');
 
 // Obtener el botón que cierra los modales
 const spanJoin = document.getElementById('close-join');
@@ -106,3 +106,24 @@ document.querySelector('.header__hamburger').addEventListener('click', () => {
 function closeMenu() {
     document.getElementById('sideMenu').classList.remove('open');
 }
+
+const fixedFooter = document.getElementById("fixedFooter");
+const buttonConfig = document.getElementById("buttonConfig");
+const headerCta = buttonConfig.parentNode;
+const buttonUp = document.getElementById("buttonUp");
+const body = document.body;
+
+function moveButtons(){
+    if (window.innerWidth > 768){
+        headerCta.insertBefore(btnJoin, buttonConfig);
+        headerCta.insertBefore(btnDonate, buttonConfig);
+        body.appendChild(buttonUp);
+    }
+    else{
+        fixedFooter.appendChild(btnJoin);
+        fixedFooter.appendChild(btnDonate);
+        fixedFooter.appendChild(buttonUp);
+    }
+}
+moveButtons()
+window.onresize = moveButtons;

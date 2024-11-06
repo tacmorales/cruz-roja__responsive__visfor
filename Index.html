@@ -45,23 +45,21 @@
             </div>
 
             <!--Call to action-->
-            <div class="header__cta">
-                <div class="header__cta__main" id="ctaWrapper">
-                    <!--Hazte voluntario-->
-                    <button class="header__cta-button--join">
-                        <img src="/assets/icons/voluntario.svg" class="manitos" alt="Icono Manos voluntarias" width="0"
-                            height="25">
-                        ÚNETE
-                    </button>
-                    <!--Haz tu donación-->
-                    <button class="header__cta-button--donate">
-                        <img src="/assets/icons/dona.svg" class="chancho" alt="Icono Chanchito Alcancía" width="0"
-                            height="25">
-                        DONA
-                    </button>
-                </div>
+            <div class="header__cta" id="headerCta">
+                <!--Hazte voluntario-->
+                <button type="button" class="header__cta-button--join" id="ctaJoin">
+                    <img src="/assets/icons/voluntario.svg" class="manitos" alt="Icono Manos voluntarias" width="0"
+                        height="25">
+                    ÚNETE
+                </button>
+                <!--Haz tu donación-->
+                <button type="button" class="header__cta-button--donate" id="ctaDonate">
+                    <img src="/assets/icons/dona.svg" class="chancho" alt="Icono Chanchito Alcancía" width="0"
+                        height="25">
+                      DONA
+                </button>
                 <!--Adaptación de página para accesbilidad-->
-                <button class="header__cta-button--accessibility">
+                <button type="button"  id="buttonConfig" class="header__cta-button--accessibility">
                     <img src="/assets/icons/config.svg" class="config" alt="Accesibilidad" width="35" height="35">
                 </button>
 
@@ -172,7 +170,7 @@
                             <label for="paypal" class="modal__form-radio-label">Paypal</label>
                         </div>
                     </div>
-                    <button type="submit" class="modal__form-button">DONARRRRX</button>
+                    <button type="submit" class="modal__form-button">DONAR</button>
                 </form>
             </div>
         </div>
@@ -379,12 +377,12 @@
     </main>
 
     <!-- Boton flotante -->
-    <figcaption class="button-up">
+    <div class="button-up" id="buttonUp">
         <a href="#header" class="button-up__top">🡹</a>
-    </figcaption>
+    </div>
 
     <!-- Footer 3 secciones -->
-    <footer id="footer">
+    <footer aria-label="footer principal" id="footer">
         <div class="footer__top">
             <section class="footer__top-faq">
                 <h4 class="faq_title">Preguntas Frecuentes</h4>
@@ -455,6 +453,10 @@
 
         <div class="footer__author"><b>CRUZ ROJA CHILENA 2024</b> | SITIO WEB DISEÑADO POR <b>FUSION</b>
         </div>
+    </footer>
+
+    <footer class="fixed-footer to-hide2" id="fixedFooter" aria-label="Botones fijos para mobile">
+
     </footer>
 
     <!-- Enlace al archivo JavaScript externo -->

@@ -29,6 +29,10 @@
     clamp(2rem, -3.2174rem + 26.087vw, 17rem);
 }
 
+*{
+    box-sizing: border-box;
+}
+
 .montserrat-regular {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -421,30 +425,11 @@ h4 {
     flex: 1;
   }
 
-  .header__cta__main {
-    /* display: block; */
-    /* transform: translateY(0); */
-    display: flex;
-    justify-content: space-around;
-    position: fixed;
-    bottom: 0;
-    z-index: 10;
-    background-color: grey;
-    width: 1000px;
-    height: 60px;
-  }
-
   /* Estilos de botones "Dona" y "Únete" como botones fijos en la esquina superior derecha */
-  .header__cta-button--join,
+  /* .header__cta-button--join,
   .header__cta-button--donate {
-    position: fixed;
-
-    /* position: fixed;
-        bottom: 10px; */
-    /* right: 10px; */
-    /* z-index: 1000; */
-    /* margin: 0; */
-  }
+    display: none;
+  } */
 
   .header__cta-button--donate {
     right: 80px; /* Acomoda los botones para que no se solapen */
@@ -873,6 +858,7 @@ h4 {
   position: fixed;
   bottom: 20px;
   right: 0;
+  z-index: 1;
 }
 
 .button-up__top {
@@ -948,3 +934,39 @@ h4 {
     padding-bottom: 5rem;
   }
 }
+
+.fixed-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 2fr 2fr 0.8fr;
+    justify-items: stretch;
+    gap: 1rem;
+    padding: 1rem;
+    & .header__cta-button--join,
+    & .header__cta-button--donate,
+    & .button-up{
+        max-width: unset;
+    }
+
+    & .button-up{
+        place-self: center;
+        padding: 0;
+        position:static;
+
+    }
+    
+    .manitos,
+    .chancho{
+        width: fit-content;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .to-hide2 {
+      display: none;
+    }
+  }
