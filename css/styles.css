@@ -1,0 +1,950 @@
+/*TEXTO IMPORTADO GOOGLE TAL CUAL Y DESPUES ADAPTADO CON CLASES PARA NO TENER ERRORES EN EL CSS*/
+
+/*.montserrat-<uniquifier> {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+.open-sans-<uniquifier> {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}*/
+
+:root {
+  --primary-color: #111317;
+  --primary-color-light: #1f2125;
+  --primary-color-extra-light: #35373b;
+  --secondary-color: #f9ac54;
+  --secondary-color-dark: #d79447;
+  --text-light: #d1d5db;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --clamp-padding: clamp(2rem, 1.4783rem + 2.6087vw, 3.5rem)
+    clamp(2rem, -3.2174rem + 26.087vw, 17rem);
+}
+
+.montserrat-regular {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  /* Peso normal */
+  font-style: normal;
+}
+
+.open-sans-bold {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  /* Peso bold */
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/*ESTILO DEL CUERPO Y DE ELEMENTOS MÁS GENERALES*/
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100dvw;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 0px;
+  color: #ed1c24;
+}
+
+h2 {
+  margin-top: 0px;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem);
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  margin: 0px;
+  color: #35363a;
+}
+
+h4 {
+  font-family: "Montserrat", sans-serif;
+  color: #ed1c24;
+}
+
+/*HEADER*/
+/*Primera barra con call to action*/
+.header__top-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background-color: #ffffff;
+  border-bottom: 2px solid #cccccc;
+}
+
+@media screen and (max-width: 500px) {
+  .header__top-cta {
+    padding: 1rem 1rem;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .header__top-cta {
+    padding: 1rem 1rem;
+  }
+
+  .header__logo-image {
+    width: 2rem;
+  }
+}
+
+/* Logo de la Cruz Roja */
+.header__logo-image {
+  width: 13rem;
+  height: auto;
+}
+
+/* Botones de acción alineados a la derecha */
+.header__cta {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+  /* Empuja los botones hacia la derecha */
+}
+
+.header__cta-button--join,
+.header__cta-button--donate {
+  background-color: #ed1c24;
+  /* Rojo para ambos botones */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  max-width: fit-content;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 750;
+  box-shadow: 0 2.5px 2.5px rgba(9, 10, 15, 0.25);
+  transition: background-color 0.25s ease;
+  display: flex;
+  /* Mantiene el ícono y el texto alineados horizontalmente */
+  align-items: center;
+  /* Alinea verticalmente el ícono y el texto */
+  justify-content: center;
+  /* Alinea horizontalmente el contenido */
+  gap: 0.5rem;
+}
+
+.header__cta-button--join:hover,
+.header__cta-button--donate:hover {
+  background-color: #c9181f;
+}
+
+.header__cta-button--accessibility {
+  border-style: none;
+  background-color: white;
+  cursor: pointer;
+  border-left: 1px solid #e6e7e7;
+  /* Línea separadora entre enlaces */
+  padding-left: 1rem;
+}
+
+.manitos {
+  width: 75%;
+}
+
+.chancho {
+  width: 75%;
+}
+
+.config {
+}
+
+/*Modal*/
+.modal {
+  display: none;
+  /* Ocultar modal por defecto */
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(9, 10, 15, 0.25);
+  /* Fondo oscuro */
+}
+
+.modal__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5.5rem auto;
+  padding: 2rem 8.5rem;
+  background-color: #ffffff;
+  border: 5px solid #ed1c24;
+  border-style: double;
+  width: fit-content;
+  /* Ancho del modal */
+  box-shadow: 0 2.5px 2.5px rgba(9, 10, 15, 0.25);
+  border-radius: 7.5px;
+  color: #090a0f;
+  padding-bottom: 4rem;
+}
+
+.modal__close {
+  position: absolute;
+  right: 1rem;
+  top: 0.2rem;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+  color: #090a0f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*Modal con Formulario Donacion*/
+.modal__form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2.5px 2.5px rgba(9, 10, 15, 0.1);
+  /* Sombra suave */
+  max-width: 500px;
+  width: 100%;
+  font-size: 0.75rem;
+}
+
+.modal__form-group {
+  margin-bottom: 1rem;
+}
+
+.modal__form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #35363a;
+  /* Texto gris oscuro */
+}
+
+.modal__form-input {
+  width: 95%;
+  padding: 0.5rem;
+  border: 1px solid #c4c4c5;
+  border-radius: 5px;
+}
+
+.modal__form-radio-group {
+  margin-bottom: 0.5rem;
+}
+
+.modal__form-radio {
+  margin-right: 0.5rem;
+}
+
+.modal__form-radio-label {
+  margin-right: 1rem;
+  color: #35363a;
+  /* Texto gris oscuro */
+}
+
+.modal__form-button {
+  width: 50%;
+  padding: 1rem;
+  background-color: #ed1c24;
+  /* Color rojo */
+  color: #ffffff;
+  /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.25s ease;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.modal__form-button:hover {
+  background-color: #c9181f;
+  /* Color rojo más oscuro al pasar el ratón */
+}
+
+/*Modal con Formulario Voluntariado*/
+.volunteer-form {
+  background-color: white;
+  /* Fondo blanco para el formulario */
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2.5px 2.5px rgba(9, 10, 15, 0.1);
+  /* Sombra suave */
+  max-width: 500px;
+  width: 100%;
+  font-size: 0.75rem;
+}
+
+.volunteer-form__title {
+  margin-bottom: 1rem;
+  color: #ed1c24;
+  /* Rojo para el título */
+  text-align: center;
+}
+
+.volunteer-form__group {
+  margin-bottom: 1rem;
+}
+
+.volunteer-form__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #35363a;
+  /* Texto gris oscuro */
+}
+
+.volunteer-form__input,
+.volunteer-form__select,
+.volunteer-form__textarea {
+  width: 100%;
+  /* Ajuste para que el ancho sea similar */
+  padding: 0.5rem;
+  border: 1px solid #c4c4c5;
+  /* Borde similar */
+  border-radius: 5px;
+  box-sizing: border-box;
+  /* Incluye el padding en el ancho */
+}
+
+.volunteer-form__textarea {
+  resize: vertical;
+  /* Permite que el área de texto se redimensione verticalmente */
+}
+
+.volunteer-form__button {
+  width: 50%;
+  padding: 1rem;
+  background-color: #ed1c24;
+  /* Color rojo */
+  color: #ffffff;
+  /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.25s ease;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.volunteer-form__button:hover {
+  background-color: #c9181f;
+  /* Color rojo más oscuro al pasar el ratón */
+}
+
+/* Segunda barra del navbar (inferior) */
+.header__bottom-menu {
+  display: flex;
+  justify-content: center;
+  background-color: #e6e7e7;
+  padding: 1rem 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 550;
+}
+
+/* Lista de enlaces en la barra inferior */
+.header__menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  /* Asegura que los elementos se centren horizontalmente */
+  margin: 0;
+  padding: 0;
+}
+
+/* Enlaces individuales */
+.header__menu-item {
+  border-left: 1px solid #ffffff;
+  /* Línea separadora entre enlaces */
+  padding: 0 3.2875rem;
+  /* Incrementa el padding para añadir espacio a los lados */
+}
+
+/* Remover borde en el primer enlace */
+.header__menu-item:first-child {
+  border-left: none;
+}
+
+/* Estilo para los enlaces de navegación */
+.header__menu-link {
+  text-decoration: none;
+  color: #090a0f;
+  font-size: 1rem;
+  padding: 1rem;
+  display: block;
+  text-align: center;
+  /* Centra el texto dentro de cada link */
+  transition: color 0.25s ease;
+}
+
+.header__menu-link:hover {
+  color: #ed1c24;
+}
+
+.header__hamburger {
+  display: none; /* Oculta el botón hamburguesa en pantallas grandes */
+}
+
+.header__cta-button--join,
+.header__cta-button--donate {
+  position: static; /* Posición normal en pantallas grandes */
+}
+
+/* Estilos para pantallas de menos de 768px */
+@media (max-width: 768px) {
+  /* Mantener el logo */
+  .header__logo {
+    flex: 1;
+  }
+
+  .header__cta__main {
+    /* display: block; */
+    /* transform: translateY(0); */
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    background-color: grey;
+    width: 1000px;
+    height: 60px;
+  }
+
+  /* Estilos de botones "Dona" y "Únete" como botones fijos en la esquina superior derecha */
+  .header__cta-button--join,
+  .header__cta-button--donate {
+    position: fixed;
+
+    /* position: fixed;
+        bottom: 10px; */
+    /* right: 10px; */
+    /* z-index: 1000; */
+    /* margin: 0; */
+  }
+
+  .header__cta-button--donate {
+    right: 80px; /* Acomoda los botones para que no se solapen */
+  }
+
+  /* Accesibilidad y menú hamburguesa */
+  .header__cta-button--accessibility {
+    display: inline-flex;
+    border: none;
+    background-color: white;
+    padding: 0;
+    margin-right: 10px;
+  }
+
+  /* Icono del menú hamburguesa */
+  .header__hamburger {
+    display: inline-flex;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 10px;
+    align-items: center;
+    color: #090a0f;
+  }
+
+  /* Ocultar la barra de navegación en versión móvil */
+  .header__bottom-menu {
+    display: none;
+  }
+}
+
+/* Estilos para el panel desplegable del menú */
+.header__side-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: #ed1c24;
+  z-index: 999;
+  padding: 1.5rem;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+
+.header__side-menu.open {
+  display: block;
+  transform: translateX(0);
+}
+
+.header__side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.header__side-menu li {
+  margin: 1rem 0;
+}
+
+.header__side-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.header__side-menu .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Carrusel */
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.carousel__content {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Imágenes del carrusel */
+.carousel__image {
+  width: 100%;
+  display: none;
+  /* Por defecto, todas las imágenes están ocultas */
+  transition: opacity 1s ease-in-out;
+}
+
+/* Mostrar la primera imagen por defecto */
+.carousel__image:first-child {
+  display: block;
+}
+
+/* Botones del carrusel */
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(100, 101, 104, 0.25);
+  box-shadow: 0 2.5px 2.5px rgba(9, 10, 15, 0.25);
+  color: white;
+  border-style: none;
+  border-radius: 7.5px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+/* Posición de los botones */
+.carousel__button--prev {
+  left: 1rem;
+}
+
+.carousel__button--next {
+  right: 1rem;
+}
+
+/*SOBRE NOSOTROS*/
+.about {
+  padding: var(--clamp-padding);
+  display: flex;
+  flex-direction: column;
+  /* Alinea elementos de arriba hacia abajo */
+  align-items: flex-start;
+  /* Alinea los hijos hacia la izquierda, pero permite flexibilidad */
+  text-align: left;
+  /* Alinea el título y párrafo a la izquierda */
+  background-color: #ffffff;
+  margin: 0 auto;
+  /* Centra la sección en la página */
+  position: relative;
+}
+
+.about__title {
+  color: #ed1c24;
+}
+
+.about__text {
+  color: #090a0f;
+  margin: 0 0 0 auto;
+  /* Mueve el botón a la derecha debajo del mapa */
+  text-align: justify;
+}
+
+.about__link {
+  align-self: flex-end;
+  /* Mueve el botón a la derecha dentro de la sección */
+  display: inline-flex;
+  /* Asegura que el botón mantenga su tamaño basado en el contenido */
+  align-items: center;
+  /* Alinea verticalmente el contenido dentro del botón */
+  justify-content: center;
+  /* Centra el contenido dentro del botón */
+  background-color: #ed1c24;
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 7.5px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2.5px 2.5px rgba(9, 10, 15, 0.25);
+  transition: background-color 0.25s ease;
+  margin: 1rem 0 0 auto;
+  /* Mueve el botón a la derecha debajo del mapa */
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.about__link:hover {
+  background-color: #c9181f;
+}
+
+/*AREAS DE ENFOQUE*/
+.areas {
+  padding: var(--clamp-padding);
+  text-align: left;
+  background-color: #ed1c24;
+  justify-content: center;
+  position: relative;
+}
+
+.areas__title {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: left;
+  /* Mantiene el título alineado a la izquierda */
+  width: 100%;
+}
+
+.areas__links {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: stretch;
+  /* Distribuye 7 columnas iguales */
+  gap: 1rem;
+  /* Espacio entre los botones */
+  list-style-type: none;
+  /* Elimina los puntos de la lista */
+  padding: 0;
+  margin: 0 0 0 0;
+  /* Añade margen superior para separarlos del título */
+  width: 100%;
+  /* Asegura que el contenedor ocupe todo el ancho de la sección */
+  font-size: 0.75rem;
+  font-weight: 550;
+}
+
+@media screen and (max-width: 1708px) {
+  .areas__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .area__list {
+    width: calc(100% / 4 - (4rem - 1rem));
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .area__list {
+    width: calc(100% / 3 - (3rem - 1rem));
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .area__list {
+    width: calc(100% / 2 - (2rem - 1rem));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .to-hide {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .areas__links {
+    flex-direction: column;
+  }
+
+  .area__list {
+    width: 100%;
+  }
+}
+
+.area__link {
+  height: 100%;
+  display: flex;
+  /* Mantiene el ícono y el texto alineados horizontalmente */
+  align-items: center;
+  /* Alinea verticalmente el ícono y el texto */
+  justify-content: center;
+  /* Alinea horizontalmente el contenido */
+  text-decoration: none;
+  /* Elimina el subrayado de los enlaces */
+  color: #ffffff;
+  font-size: 1rem;
+  gap: 0.5rem;
+  /* Espacio entre el ícono y el texto */
+  background-color: #ed1c24;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  /* Incluye el padding en el ancho */
+  text-align: center;
+  box-shadow: 0 2.5px 2.5px rgba(9, 10, 15, 0.25);
+  transition: background-color 0.25s ease;
+}
+
+.area__link:hover {
+  background-color: #c9181f;
+}
+
+/*SECCION MAPA*/
+.map {
+  padding: var(--clamp-padding);
+  text-align: left;
+  background-color: #e6e7e7;
+  justify-content: center;
+  /* gap: 6rem;*/
+  position: relative;
+}
+
+.map__title {
+  color: #ed1c24;
+}
+
+.map__button {
+  display: flex;
+  align-items: center;
+  /* Alinea verticalmente al centro */
+  justify-content: center;
+  /* Mantiene el contenido del botón centrado */
+  margin: 1rem 0 0 auto;
+  /* Mueve el botón a la derecha debajo del mapa */
+  background-color: #ed1c24;
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 7.5px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2.5px 2.5px rgba(9, 10, 15, 0.25);
+  transition: background-color 0.25s ease;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.map__button-icon {
+  margin-right: 10px;
+  /* Espacio entre el icono y el texto */
+}
+
+.map__button:hover {
+  background-color: #c9181f;
+}
+
+/* Sección Noticias */
+.news {
+  padding: var(--clamp-padding);
+  text-align: left;
+  background-color: #ffffff;
+  justify-content: center;
+  position: relative;
+}
+
+.news__title {
+  color: #ed1c24;
+}
+
+.news__carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.news__items {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  /* Ajusta para acomodar todos los artículos */
+}
+
+.news__item {
+  position: relative;
+  /* Posiciona el contenedor para que el texto flote sobre la imagen */
+  flex: 0 0 calc(100% / 3);
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+  overflow: hidden;
+}
+
+.news__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: rgba(9, 10, 15, 0);
+  text-shadow: 0 1.25px 1.25px #c9181f, 0 0 1em #090a0f, 0 0 0.2em #ed1c24;
+  justify-content: center;
+  padding: 1rem;
+  font-weight: 650;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.news__image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: fill;
+  display: block;
+}
+
+.news__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2.5px 2.5px rgba(9, 10, 15, 0.25);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+}
+
+.news__button--prev {
+  left: 1rem;
+}
+
+.news__button--next {
+  right: 1rem;
+}
+
+/*BOTON FLOTANTE*/
+.button-up {
+  padding: 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+}
+
+.button-up__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #646568;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 2.5px 5px rgba(9, 10, 15, 0.25);
+  transition: background-color 0.25s ease;
+}
+
+.button-up__top:hover {
+  background-color: #35363a;
+}
+
+/*FOOTER 3 PARTES: TOP FAQ - RRSS - AUTORES*/
+.footer__top {
+  padding: var(--clamp-padding);
+  background-color: #c4c4c5;
+  justify-content: center;
+  display: flex;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.footer__text {
+  color: #090a0f;
+  font-size: 0.85rem;
+  font-weight: 550;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #090a0f;
+}
+
+.footer__imagenes {
+  margin-top: 2rem;
+}
+
+.footer__logos {
+  padding-right: 1rem;
+}
+
+.footer__rrss {
+  padding: var(--clamp-padding);
+  background-color: #ed1c24;
+  color: #e6e7e7;
+  text-align: center;
+}
+
+.footer__boton {
+  padding: 0 1.5rem;
+}
+
+.footer__author {
+  background-color: #090a0f;
+  color: #e6e7e7;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 550;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__author {
+    padding-bottom: 5rem;
+  }
+}

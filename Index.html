@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!--VISTA SEGUN DISPOSITIVO-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--ROBOTS DE BUSQUEDA-->
+    <meta name="robots" content="index,follow">
+    <!--DESCRIPCION PARA SEO-->
+    <meta name="description"
+        content="Somos Cruz Roja Chilena, una institución humanitaria de carácter voluntario que busca dar una mano a quién lo necesite.">
+    <!--PALABRAS DE BUSQUEDA-->
+    <meta name="keywords" content="Cruz Roja, Ayuda Humanitaria, Voluntariado">
+    <!--AUTORES DE LA WEB-->
+    <meta name="author" content="Agencia Fusión">
+
+    <!--TIPOGRAFIAS EXTERNAS-->
+    <!--montserrat-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!--open sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <!--NOMBRE PARA LA WEB-->
+    <title>Cruz Roja Chilena</title>
+    <!--Link con CSS: se linkea la hoja de estilo-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!--Favicon: se linkea la imagen en formato ico-->
+    <link rel="shortcut icon" href="/assets/icons/favicon_cruzroja.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Header con el logo y el menú de navegación -->
+    <header id="header">
+        <div class="header__top-cta">
+            <!--Logo Cruz Roja cabecera-->
+            <div class="header__logo">
+                <img src="/assets/img/Logo.png" alt="Cruz Roja Chilena" class="header__logo-image">
+            </div>
+
+            <!--Call to action-->
+            <div class="header__cta">
+                <div class="header__cta__main" id="ctaWrapper">
+                    <!--Hazte voluntario-->
+                    <button class="header__cta-button--join">
+                        <img src="/assets/icons/voluntario.svg" class="manitos" alt="Icono Manos voluntarias" width="0"
+                            height="25">
+                        ÚNETE
+                    </button>
+                    <!--Haz tu donación-->
+                    <button class="header__cta-button--donate">
+                        <img src="/assets/icons/dona.svg" class="chancho" alt="Icono Chanchito Alcancía" width="0"
+                            height="25">
+                        DONA
+                    </button>
+                </div>
+                <!--Adaptación de página para accesbilidad-->
+                <button class="header__cta-button--accessibility">
+                    <img src="/assets/icons/config.svg" class="config" alt="Accesibilidad" width="35" height="35">
+                </button>
+
+                <div class="header__hamburger">
+                    ☰
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal ÚNETE -->
+        <div class="modal" id="modal-join">
+            <div class="modal__content">
+                <span class="modal__close" id="close-join">&times;</span>
+                <h1 class="modal__title--join">¡HAZTE VOLUNTARIO!</h1>
+                <h3 class="modal__subtitle--join">Forma parte de una institución mundial</h3>
+                <form class="modal__form">
+
+                    <div class="volunteer-form__group">
+                        <label for="nombre" class="volunteer-form__label">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" class="volunteer-form__input" required>
+                    </div>
+                    <div class="volunteer-form__group">
+                        <label for="apellido" class="volunteer-form__label">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" class="volunteer-form__input" required>
+                    </div>
+                    <div class="volunteer-form__group">
+                        <label for="correo" class="volunteer-form__label">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" class="volunteer-form__input" required>
+                    </div>
+                    <div class="volunteer-form__group">
+                        <label for="telefono" class="volunteer-form__label">Teléfono de contacto:</label>
+                        <input type="tel" id="telefono" name="telefono" class="volunteer-form__input" required>
+                    </div>
+                    <div class="volunteer-form__group">
+                        <label for="region" class="volunteer-form__label">Región de Chile a la cual perteneces:</label>
+                        <select id="region" name="region" class="volunteer-form__select" required>
+                            <option value="#"> </option>
+                            <option value="Arica y Parinacota">Arica y Parinacota</option>
+                            <option value="Tarapacá">Tarapacá</option>
+                            <option value="Antofagasta">Antofagasta</option>
+                            <option value="Atacama">Atacama</option>
+                            <option value="Coquimbo">Coquimbo</option>
+                            <option value="Valparaíso">Valparaíso</option>
+                            <option value="Metropolitana">Metropolitana</option>
+                            <option value="O'Higgins">O'Higgins</option>
+                            <option value="Maule">Maule</option>
+                            <option value="Ñuble">Ñuble</option>
+                            <option value="Bío Bío">Bío Bío</option>
+                            <option value="Araucanía">Araucanía</option>
+                            <option value="Los Ríos">Los Ríos</option>
+                            <option value="Los Lagos">Los Lagos</option>
+                            <option value="Aysén">Aysén</option>
+                            <option value="Magallanes">Magallanes</option>
+                        </select>
+                    </div>
+                    <div class="volunteer-form__group">
+                        <label for="motivacion" class="volunteer-form__label">Motivación para ser Voluntario/a de Cruz
+                            Roja Chilena:</label>
+                        <textarea id="motivacion" name="motivacion" class="volunteer-form__textarea" rows="5"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="volunteer-form__button">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal DONA -->
+        <div class="modal" id="modal-donate">
+            <div class="modal__content">
+                <span class="modal__close" id="close-donate">&times;</span>
+                <h1 class="modal__title--donate">¡TE NECESITAMOS!</h1>
+                <h3 class="modal__subtitle--donate">Haz tu aporte aquí</h3>
+                <form class="modal__form">
+                    <div class="modal__form-group">
+                        <label for="nombre" class="modal__form-label">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" class="modal__form-input" required>
+                    </div>
+                    <div class="modal__form-group">
+                        <label for="apellido" class="modal__form-label">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" class="modal__form-input" required>
+                    </div>
+                    <div class="modal__form-group">
+                        <label for="correo" class="modal__form-label">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" class="modal__form-input" required>
+                    </div>
+                    <div class="modal__form-group">
+                        <label for="monto" class="modal__form-label">Monto a donar ($):</label>
+                        <input type="number" id="monto" name="monto" class="modal__form-input" required>
+                    </div>
+                    <div class="modal__form-group">
+                        <label class="modal__form-label">Opciones de Pago:</label>
+                        <div class="modal__form-radio-group">
+                            <input type="radio" id="tarjeta" name="pago" value="tarjeta" class="modal__form-radio"
+                                required>
+                            <label for="tarjeta" class="modal__form-radio-label">Tarjeta de
+                                crédito/débito/prepago</label>
+                        </div>
+                        <div class="modal__form-radio-group">
+                            <input type="radio" id="transferencia" name="pago" value="transferencia"
+                                class="modal__form-radio" required>
+                            <label for="transferencia" class="modal__form-radio-label">Transferencia electrónica</label>
+                        </div>
+                        <div class="modal__form-radio-group">
+                            <input type="radio" id="paypal" name="pago" value="paypal" class="modal__form-radio"
+                                required>
+                            <label for="paypal" class="modal__form-radio-label">Paypal</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="modal__form-button">DONARRRRX</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Segunda barra del navbar (inferior) -->
+        <nav class="header__bottom-menu">
+            <!-- Menú de navegación con separación entre los enlaces -->
+            <ul class="header__menu">
+                <li class="header__menu-item">
+                    <a href="#about" class="header__menu-link">Nosotros</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#areas" class="header__menu-link">Direcciones Nacionales</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#map" class="header__menu-link">Voluntariado</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#footer" class="header__menu-link">Documentos</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#news" class="header__menu-link">Prensa</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__side-menu" id="sideMenu">
+            <button class="close-btn" onclick="closeMenu()">×</button>
+            <ul>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#areas">Direcciones Nacionales</a></li>
+                <li><a href="#map">Voluntariado</a></li>
+                <li><a href="#footer">Documentos</a></li>
+                <li><a href="#news">Prensa</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Carrusel de imágenes -->
+        <section class="carousel">
+            <button class="carousel__button carousel__button--prev">🡸</button>
+            <div class="carousel__content">
+                <img src="/assets/img/slide1.png" alt="Amigurumi 1" class="carousel__image carousel__image--visible">
+                <img src="/assets/img/slide2.png" alt="Amigurumi 2" class="carousel__image">
+                <img src="/assets/img/slide3.png" alt="Amigurumi 3" class="carousel__image">
+            </div>
+            <button class="carousel__button carousel__button--next">🡺</button>
+        </section>
+
+
+
+
+
+
+        <!--SECCION MISIÓN -->
+        <section class="about" id="about">
+            <h2 class="about__title">Nuestra Misión</h2>
+            <p class="about__text">En Cruz Roja Chilena, nos dedicamos a ofrecer ayuda y apoyo a quienes más lo
+                necesitan. Desde nuestros inicios, nuestra misión ha sido prevenir y aliviar el sufrimiento humano sin
+                ningún tipo de discriminación. Nos enorgullece mejorar la calidad de vida de las personas más
+                vulnerables, trabajando constantemente para fortalecer nuestras comunidades.
+                <br>
+                <br>
+                Nuestra historia se remonta a más de un siglo de dedicación y compromiso, marcada por innumerables
+                historias de esperanza y resiliencia. Hemos sido testigos de la solidaridad en tiempos de crisis y de la
+                capacidad humana para unirse frente a las adversidades.
+            </p>
+            <a href="#" class="about__link">VER MÁS</a>
+        </section>
+
+        <!-- Sección de áreas de enfoque -->
+        <section class="areas" id="areas">
+            <h2 class="areas__title">Conoce nuestras áreas de trabajo</h2>
+            <ul class="areas__links">
+                <li class="area__list">
+                    <a href="#" class="area__link"><svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="35" viewBox="0 0 35 35">
+                            <image
+                                xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxLjEzZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgNTc2IDUxMiI+Cgk8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTE2My45IDEzNi45Yy0yOS40LTI5LjgtMjkuNC03OC4yIDAtMTA4czc3LTI5LjggMTA2LjQgMGwxNy43IDE4bDE3LjctMThjMjkuNC0yOS44IDc3LTI5LjggMTA2LjQgMHMyOS40IDc4LjIgMCAxMDhMMzEwLjUgMjQwLjFjLTYuMiA2LjMtMTQuMyA5LjQtMjIuNSA5LjRzLTE2LjMtMy4xLTIyLjUtOS40em00MDQuMyAxOTkuNGMxMy4xIDE3LjggOS4zIDQyLjgtOC41IDU1LjlsLTEyNi42IDkzLjNjLTIzLjQgMTcuMi01MS42IDI2LjUtODAuNyAyNi41SDMyYy0xNy43IDAtMzItMTQuMy0zMi0zMnYtNjRjMC0xNy43IDE0LjMtMzIgMzItMzJoMzYuOGw0NC45LTM2YzIyLjctMTguMiA1MC45LTI4IDgwLTI4SDM1MmMxNy43IDAgMzIgMTQuMyAzMiAzMnMtMTQuMyAzMi0zMiAzMmgtODBjLTguOCAwLTE2IDcuMi0xNiAxNnM3LjIgMTYgMTYgMTZoMTIwLjZsMTE5LjctODguMmMxNy44LTEzLjEgNDIuOC05LjMgNTUuOSA4LjVNMTkzLjYgMzg0aC0uOXoiIC8+Cjwvc3ZnPg=="
+                                x="0" y="0" width="35" height="35" />
+                        </svg>Bienestar Social</a>
+                </li>
+                <li class="area__list to-hide">
+                    <a href="#" class="area__link"><svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35">
+                            <image
+                                xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgoJPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiA4SDRhMiAyIDAgMCAwLTIgMnY0YTIgMiAwIDAgMCAyIDJoMXY0YTEgMSAwIDAgMCAxIDFoMmExIDEgMCAwIDAgMS0xdi00aDNsNSA0VjR6bTkuNSA0YzAgMS43MS0uOTYgMy4yNi0yLjUgNFY4YzEuNTMuNzUgMi41IDIuMyAyLjUgNCIgLz4KPC9zdmc+"
+                                x="0" y="0" width="35" height="35" />
+                        </svg>Comunicaciones</a>
+                </li>
+                <li class="area__list to-hide">
+                    <a href="#" class="area__link"><svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35">
+                            <image
+                                xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgoJPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik01IDIxcS0uODI1IDAtMS40MTItLjU4N1QzIDE5VjRxMC0uNDI1LjI4OC0uNzEyVDQgM3QuNzEzLjI4OFQ1IDR2MTVoMTVxLjQyNSAwIC43MTMuMjg4VDIxIDIwdC0uMjg4LjcxM1QyMCAyMXptMi0zcS0uNDI1IDAtLjcxMi0uMjg4VDYgMTd2LTdxMC0uNDI1LjI4OC0uNzEyVDcgOWgycS40MjUgMCAuNzEzLjI4OFQxMCAxMHY3cTAgLjQyNS0uMjg4LjcxM1Q5IDE4em01IDBxLS40MjUgMC0uNzEyLS4yODhUMTEgMTdWNXEwLS40MjUuMjg4LS43MTJUMTIgNGgycS40MjUgMCAuNzEzLjI4OFQxNSA1djEycTAgLjQyNS0uMjg4LjcxM1QxNCAxOHptNSAwcS0uNDI1IDAtLjcxMi0uMjg4VDE2IDE3di0zcTAtLjQyNS4yODgtLjcxMlQxNyAxM2gycS40MjUgMCAuNzEzLjI4OFQyMCAxNHYzcTAgLjQyNS0uMjg4LjcxM1QxOSAxOHoiIC8+Cjwvc3ZnPg=="
+                                x="0" y="0" width="35" height="35" />
+                        </svg>Finanzas</a>
+                </li>
+                <li class="area__list">
+                    <a href="#" class="area__link"><svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="35" viewBox="0 0 35 35">
+                            <image
+                                xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxLjI1ZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgNjQwIDUxMiI+Cgk8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTQ4OCAxOTJIMzM2djU2YzAgMzkuNy0zMi4zIDcyLTcyIDcycy03Mi0zMi4zLTcyLTcyVjEyNi40bC02NC45IDM5QzEwNy44IDE3Ni45IDk2IDE5Ny44IDk2IDIyMC4ydjQ3LjNsLTgwIDQ2LjJDLjcgMzIyLjUtNC42IDM0Mi4xIDQuMyAzNTcuNGw4MCAxMzguNmM4LjggMTUuMyAyOC40IDIwLjUgNDMuNyAxMS43TDIzMS40IDQ0OEgzNjhjMzUuMyAwIDY0LTI4LjcgNjQtNjRoMTZjMTcuNyAwIDMyLTE0LjMgMzItMzJ2LTY0aDhjMTMuMyAwIDI0LTEwLjcgMjQtMjR2LTQ4YzAtMTMuMy0xMC43LTI0LTI0LTI0bTE0Ny43LTM3LjRMNTU1LjcgMTZDNTQ2LjkuNyA1MjcuMy00LjUgNTEyIDQuM0w0MDguNiA2NEgzMDYuNGMtMTIgMC0yMy43IDMuNC0zMy45IDkuN0wyMzkgOTQuNmMtOS40IDUuOC0xNSAxNi4xLTE1IDI3LjFWMjQ4YzAgMjIuMSAxNy45IDQwIDQwIDQwczQwLTE3LjkgNDAtNDB2LTg4aDE4NGMzMC45IDAgNTYgMjUuMSA1NiA1NnYyOC41bDgwLTQ2LjJjMTUuMy04LjkgMjAuNS0yOC40IDExLjctNDMuNyIgLz4KPC9zdmc+"
+                                x="0" y="0" width="35" height="35" />
+                        </svg>Gestión del Riesgo</a>
+                </li>
+                <li class="area__list">
+                    <a href="#" class="area__link"><svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35">
+                            <image
+                                xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxLjI1ZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgNjQwIDUxMiI+Cgk8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTE2MCAwYTY0IDY0IDAgMSAxIDAgMTI4YTY0IDY0IDAgMSAxIDAtMTI4TTg4IDQ4MHYtODBINzAuMmMtMTAuOSAwLTE4LjYtMTAuNy0xNS4yLTIxLjFsMzEuMS05My40bC0yOC42IDM3LjhjLTEwLjcgMTQuMS0zMC44IDE2LjgtNDQuOCA2LjJzLTE2LjgtMzAuNy02LjItNDQuOEw2NS40IDIwN2MyMi40LTI5LjYgNTcuNS00NyA5NC42LTQ3czcyLjIgMTcuNCA5NC42IDQ3bDU4LjkgNzcuN2MxMC43IDE0LjEgNy45IDM0LjItNi4yIDQ0LjhzLTM0LjIgNy45LTQ0LjgtNi4ybC0yOC42LTM3LjhsMzEuMSA5My40YzMuNSAxMC40LTQuMyAyMS4xLTE1LjIgMjEuMUgyMzJ2ODBjMCAxNy43LTE0LjMgMzItMzIgMzJzLTMyLTE0LjMtMzItMzJ2LTgwaC0xNnY4MGMwIDE3LjctMTQuMyAzMi0zMiAzMnMtMzItMTQuMy0zMi0zMk00ODAgMGE2NCA2NCAwIDEgMSAwIDEyOGE2NCA2NCAwIDEgMSAwLTEyOG0tOCAzODR2OTZjMCAxNy43LTE0LjMgMzItMzIgMzJzLTMyLTE0LjMtMzItMzJWMzAwLjVMMzk1LjEgMzIxYy05LjQgMTUtMjkuMiAxOS40LTQ0LjEgMTBzLTE5LjQtMjkuMi0xMC00NC4xbDUxLjctODIuMWMxNy42LTI3LjkgNDguMy00NC45IDgxLjItNDQuOWgxMi4zYzMzIDAgNjMuNyAxNi45IDgxLjIgNDQuOWw1MS43IDgyLjJjOS40IDE1IDQuOSAzNC43LTEwIDQ0LjFzLTM0LjcgNC45LTQ0LjEtMTBsLTEzLTIwLjZWNDgwYzAgMTcuNy0xNC4zIDMyLTMyIDMycy0zMi0xNC4zLTMyLTMydi05NnoiIC8+Cjwvc3ZnPg=="
+                                x="0" y="0" width="35" height="35" />
+                        </svg>Juventud</a>
+                </li>
+                <li class="area__list to-hide">
+                    <a href="#" class="area__link"><svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35">
+                            <image
+                                xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxLjI1ZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgNjQwIDUxMiI+Cgk8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTAgNDhDMCAyMS41IDIxLjUgMCA0OCAwaDMyMGMyNi41IDAgNDggMjEuNSA0OCA0OHY0OGg1MC43YzE3IDAgMzMuMyA2LjcgNDUuMyAxOC43bDc3LjMgNzcuM2MxMiAxMiAxOC43IDI4LjMgMTguNyA0NS4zVjM1MmMxNy43IDAgMzIgMTQuMyAzMiAzMnMtMTQuMyAzMi0zMiAzMmgtMzJjMCA1My00MyA5Ni05NiA5NnMtOTYtNDMtOTYtOTZIMjU2YzAgNTMtNDMgOTYtOTYgOTZzLTk2LTQzLTk2LTk2SDQ4Yy0yNi41IDAtNDgtMjEuNS00OC00OHptNDE2IDIwOGgxMjh2LTE4LjdMNDY2LjcgMTYwSDQxNnpNMTYwIDQ2NGE0OCA0OCAwIDEgMCAwLTk2YTQ4IDQ4IDAgMSAwIDAgOTZtMzY4LTQ4YTQ4IDQ4IDAgMSAwLTk2IDBhNDggNDggMCAxIDAgOTYgME0xNzYgODB2NDhoLTQ4Yy04LjggMC0xNiA3LjItMTYgMTZ2MzJjMCA4LjggNy4yIDE2IDE2IDE2aDQ4djQ4YzAgOC44IDcuMiAxNiAxNiAxNmgzMmM4LjggMCAxNi03LjIgMTYtMTZ2LTQ4aDQ4YzguOCAwIDE2LTcuMiAxNi0xNnYtMzJjMC04LjgtNy4yLTE2LTE2LTE2aC00OFY4MGMwLTguOC03LjItMTYtMTYtMTZoLTMyYy04LjggMC0xNiA3LjItMTYgMTYiIC8+Cjwvc3ZnPg=="
+                                x="0" y="0" width="35" height="35" />
+                        </svg>Logística</a>
+                </li>
+                <li class="area__list">
+                    <a href="#" class="area__link"><svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35">
+                            <image
+                                xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+Cgk8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTE4NCA0OGgxNDRjNC40IDAgOCAzLjYgOCA4djQwSDE3NlY1NmMwLTQuNCAzLjYtOCA4LThtLTU2IDh2NDBINjRjLTM1LjMgMC02NCAyOC43LTY0IDY0djI1NmMwIDM1LjMgMjguNyA2NCA2NCA2NGgzODRjMzUuMyAwIDY0LTI4LjcgNjQtNjRWMTYwYzAtMzUuMy0yOC43LTY0LTY0LTY0aC02NFY1NmMwLTMwLjktMjUuMS01Ni01Ni01NkgxODRjLTMwLjkgMC01NiAyNS4xLTU2IDU2bTk2IDE1MmMwLTguOCA3LjItMTYgMTYtMTZoMzJjOC44IDAgMTYgNy4yIDE2IDE2djQ4aDQ4YzguOCAwIDE2IDcuMiAxNiAxNnYzMmMwIDguOC03LjIgMTYtMTYgMTZoLTQ4djQ4YzAgOC44LTcuMiAxNi0xNiAxNmgtMzJjLTguOCAwLTE2LTcuMi0xNi0xNnYtNDhoLTQ4Yy04LjggMC0xNi03LjItMTYtMTZ2LTMyYzAtOC44IDcuMi0xNiAxNi0xNmg0OHoiIC8+Cjwvc3ZnPg=="
+                                x="0" y="0" width="35" height="35" />
+                        </svg>Salud</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Mapa -->
+        <section class="map" id="map">
+            <h2 class="map__title">Encuéntranos a lo largo de Chile</h2>
+            <div class="map__content">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.534593419429!2d-70.63585182342986!3d-33.43537609674198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5ef40aff06d%3A0x925b2ad6a65ea6a1!2sCruz%20Roja%20Chilena%20Sede%20Central!5e0!3m2!1sen!2scl!4v1729553243910!5m2!1sen!2scl"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <button class="map__button">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25"
+                    height="25" viewBox="0 0 25 25" class="map__button-icon">
+                    <image
+                        xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgoJPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xOC4zNjQgMTcuMzY0TDEyIDIzLjcyOGwtNi4zNjQtNi4zNjRhOSA5IDAgMSAxIDEyLjcyOCAwTTExIDEwSDh2MmgzdjNoMnYtM2gzdi0yaC0zVjdoLTJ6IiAvPgo8L3N2Zz4="
+                        x="0" y="0" width="25" height="25" />
+                </svg>USAR MI UBICACIÓN
+            </button>
+        </section>
+
+
+
+
+        <section class="news" id="news">
+            <h2 class="news__title">Últimas actualizaciones</h2>
+            <div class="news__carousel">
+                <button class="news__button news__button--prev">🡸</button>
+                <div class="news__items">
+                    <article class="news__item"><a href="#"><img src="/assets/img/news/news_imagen-0.jpeg"
+                                alt="Noticia 1" class="news__image"></a>
+                        <div class="news__caption">Título de Noticia 1</div>
+                    </article>
+                    <article class="news__item"><a href="#"><img src="/assets/img/news/news_imagen-1.jpg"
+                                alt="Noticia 2" class="news__image"></a>
+                        <div class="news__caption">Título de Noticia 2</div>
+                    </article>
+                    <article class="news__item"><a href="#"><img src="/assets/img/news/news_imagen-2.jpg"
+                                alt="Noticia 3" class="news__image"></a>
+                        <div class="news__caption">Título de Noticia 3</div>
+                    </article>
+                    <article class="news__item"><a href="#"><img src="/assets/img/news/news_imagen-3.jpg"
+                                alt="Noticia 4" class="news__image"></a>
+                        <div class="news__caption">Título de Noticia 4</div>
+                    </article>
+                    <article class="news__item"><a href="#"><img src="/assets/img/news/news_imagen-4.jpg"
+                                alt="Noticia 5" class="news__image"></a>
+                        <div class="news__caption">Título de Noticia 5</div>
+                    </article>
+                    <article class="news__item"><a href="#"><img src="/assets/img/news/news_imagen-5.jpg"
+                                alt="Noticia 6" class="news__image"></a>
+                        <div class="news__caption">Título de Noticia 6</div>
+                    </article>
+                    <article class="news__item"><a href="#"><img src="/assets/img/news/news_imagen-6.jpg"
+                                alt="Noticia 7" class="news__image"></a>
+                        <div class="news__caption">Título de Noticia 7</div>
+                    </article>
+                    <article class="news__item"><a href="#"><img src="/assets/img/news/news_imagen-7.jpg"
+                                alt="Noticia 8" class="news__image"></a>
+                        <div class="news__caption">Título de Noticia 8</div>
+                    </article>
+                    <article class="news__item"><a href="#"><img src="/assets/img/news/news_imagen-8.jpg"
+                                alt="Noticia 9" class="news__image"></a>
+                        <div class="news__caption">Título de Noticia 9</div>
+                    </article>
+                </div>
+                <button class="news__button news__button--next">🡺</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Boton flotante -->
+    <figcaption class="button-up">
+        <a href="#header" class="button-up__top">🡹</a>
+    </figcaption>
+
+    <!-- Footer 3 secciones -->
+    <footer id="footer">
+        <div class="footer__top">
+            <section class="footer__top-faq">
+                <h4 class="faq_title">Preguntas Frecuentes</h4>
+                <p class="footer__text"><a href="#" class="footer__link">Conócenos</a></p>
+                <p class="footer__text"><a href="#" class="footer__link">Consultas y sugerencias</a></p>
+                <p class="footer__text"><a href="#" class="footer__link">Bolsa de trabajo</a></p>
+            </section>
+            <section class="footer__top-bepart">
+                <h4 class="bepart_title">Involúcrate</h4>
+                <p class="footer__text"><a href="#" class="footer__link">Únete como voluntario</a></p>
+                <p class="footer__text"><a href="#" class="footer__link">Aportes monetarios</a></p>
+                <p class="footer__text"><a href="#" class="footer__link">Banco de sangre</a></p>
+            </section>
+            <section class="footer__top-contact">
+                <h4 class="contact_title">Contáctanos</h4>
+                <p class="footer__text">Dirección: 📍 <a href="#" class="footer__link">Avda. Santa María 0150,
+                        Providencia</a></p>
+                <p class="footer__text">Teléfono: ☎️ <a href="#" class="footer__link">+56(2) 2783 4100</a></p>
+                <p class="footer__text">Mail: 📧 <a href="#" class="footer__link">contacto@cruzroja.cl</a></p>
+            </section>
+            <section class="footer__imagenes">
+                <img src="/assets/img/footer_logo-1.png" alt="Logo Federación Cruz Roja" class="footer__logos"
+                    width="55">
+                <img src="/assets/img/footer_logo-2.png" alt="Logo Comite Internacional de Cruz Roja"
+                    class="footer__logos" width="45">
+                <img src="/assets/img/CruzRojaOficial.png" alt="Logo Comite Internacional de Cruz Roja"
+                    class="footer__logos" width="145">
+            </section>
+        </div>
+
+        <div class="footer__rrss">
+            <a href="https://web.facebook.com/cruz.roja.chile" class="footer__boton">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50"
+                    height="50" viewBox="0 0 50 50" class="footer__icono">
+                    <image
+                        xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgoJPHBhdGggZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTE1LjcyNSAyMnYtNy43NDVoMi42bC4zODktMy4wMThoLTIuOTlWOS4zMWMwLS44NzQuMjQzLTEuNDcgMS40OTctMS40N2gxLjU5OHYtMi43YTIxIDIxIDAgMCAwLTIuMzMtLjEyYy0yLjMwNCAwLTMuODgxIDEuNDA3LTMuODgxIDMuOTl2Mi4yMjdIMTB2My4wMThoMi42MDdWMjJIMy4xMDRDMi40OTQgMjIgMiAyMS41MDYgMiAyMC44OTZWMy4xMDRDMiAyLjQ5NCAyLjQ5NCAyIDMuMTA0IDJoMTcuNzkyQzIxLjUwNiAyIDIyIDIuNDk0IDIyIDMuMTA0djE3Ljc5MmMwIC42MS0uNDk0IDEuMTA0LTEuMTA0IDEuMTA0eiIgLz4KPC9zdmc+"
+                        alt="Facebook" x="0" y="0" width="50" height="50" />
+                </svg></a>
+            <a href="https://www.instagram.com/cruzrojachilena/" class="footer__boton">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50"
+                    height="50" viewBox="0 0 50 50" class="footer__icono">
+                    <image
+                        xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgoJPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik03LjggMmg4LjRDMTkuNCAyIDIyIDQuNiAyMiA3Ljh2OC40YTUuOCA1LjggMCAwIDEtNS44IDUuOEg3LjhDNC42IDIyIDIgMTkuNCAyIDE2LjJWNy44QTUuOCA1LjggMCAwIDEgNy44IDJtLS4yIDJBMy42IDMuNiAwIDAgMCA0IDcuNnY4LjhDNCAxOC4zOSA1LjYxIDIwIDcuNiAyMGg4LjhhMy42IDMuNiAwIDAgMCAzLjYtMy42VjcuNkMyMCA1LjYxIDE4LjM5IDQgMTYuNCA0em05LjY1IDEuNWExLjI1IDEuMjUgMCAwIDEgMS4yNSAxLjI1QTEuMjUgMS4yNSAwIDAgMSAxNy4yNSA4QTEuMjUgMS4yNSAwIDAgMSAxNiA2Ljc1YTEuMjUgMS4yNSAwIDAgMSAxLjI1LTEuMjVNMTIgN2E1IDUgMCAwIDEgNSA1YTUgNSAwIDAgMS01IDVhNSA1IDAgMCAxLTUtNWE1IDUgMCAwIDEgNS01bTAgMmEzIDMgMCAwIDAtMyAzYTMgMyAwIDAgMCAzIDNhMyAzIDAgMCAwIDMtM2EzIDMgMCAwIDAtMy0zIiAvPgo8L3N2Zz4="
+                        alt="Instagram" x="0" y="0" width="50" height="50" />
+                </svg></a>
+            <a href="https://www.linkedin.com/company/cruz-roja-chile?originalSubdomain=cl" class="footer__boton"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50"
+                    viewBox="0 0 50 50" class="footer__icono">
+                    <image
+                        xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgoJPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xOSAzYTIgMiAwIDAgMSAyIDJ2MTRhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJWNWEyIDIgMCAwIDEgMi0yem0tLjUgMTUuNXYtNS4zYTMuMjYgMy4yNiAwIDAgMC0zLjI2LTMuMjZjLS44NSAwLTEuODQuNTItMi4zMiAxLjN2LTEuMTFoLTIuNzl2OC4zN2gyLjc5di00LjkzYzAtLjc3LjYyLTEuNCAxLjM5LTEuNGExLjQgMS40IDAgMCAxIDEuNCAxLjR2NC45M3pNNi44OCA4LjU2YTEuNjggMS42OCAwIDAgMCAxLjY4LTEuNjhjMC0uOTMtLjc1LTEuNjktMS42OC0xLjY5YTEuNjkgMS42OSAwIDAgMC0xLjY5IDEuNjljMCAuOTMuNzYgMS42OCAxLjY5IDEuNjhtMS4zOSA5Ljk0di04LjM3SDUuNXY4LjM3eiIgLz4KPC9zdmc+"
+                        alt="Linkedin" x="0" y="0" width="50" height="50" />
+                </svg></a>
+            <a href="https://twitter.com/cruzrojachilena" class="footer__boton"><svg xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"
+                    class="footer__icono">
+                    <image
+                        xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgoJPGcgZmlsbD0id2hpdGUiPgoJCTxwYXRoIGQ9Ik0xIDJoMi41TDMuNSAyaC0yLjV6TTUuNSAyaDIuNUw3LjIgMmgtMi41eiI+CgkJCTxhbmltYXRlIGZpbGw9ImZyZWV6ZSIgYXR0cmlidXRlTmFtZT0iZCIgZHVyPSIwLjRzIiB2YWx1ZXM9Ik0xIDJoMi41TDMuNSAyaC0yLjV6TTUuNSAyaDIuNUw3LjIgMmgtMi41ejtNMSAyaDIuNUwxOC41IDIyaC0yLjV6TTUuNSAyaDIuNUwyMyAyMmgtMi41eiIgLz4KCQk8L3BhdGg+CgkJPHBhdGggZD0iTTMgMmg1djBoLTV6TTE2IDIyaDV2MGgtNXoiPgoJCQk8YW5pbWF0ZSBmaWxsPSJmcmVlemUiIGF0dHJpYnV0ZU5hbWU9ImQiIGJlZ2luPSIwLjRzIiBkdXI9IjAuNHMiIHZhbHVlcz0iTTMgMmg1djBoLTV6TTE2IDIyaDV2MGgtNXo7TTMgMmg1djJoLTV6TTE2IDIyaDV2LTJoLTV6IiAvPgoJCTwvcGF0aD4KCQk8cGF0aCBkPSJNMTguNSAyaDMuNUwyMiAyaC0zLjV6Ij4KCQkJPGFuaW1hdGUgZmlsbD0iZnJlZXplIiBhdHRyaWJ1dGVOYW1lPSJkIiBiZWdpbj0iMC41cyIgZHVyPSIwLjRzIiB2YWx1ZXM9Ik0xOC41IDJoMy41TDIyIDJoLTMuNXo7TTE4LjUgMmgzLjVMNSAyMmgtMy41eiIgLz4KCQk8L3BhdGg+Cgk8L2c+Cjwvc3ZnPg=="
+                        alt="Twitter" x="0" y="0" width="50" height="50" />
+                </svg></a>
+            <a href="https://www.youtube.com/@cruzrojachilenaoficial" class="footer__boton"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50"
+                    viewBox="0 0 50 50" class="footer__icono">
+                    <image
+                        xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgoJPHBhdGggZmlsbD0id2hpdGUiIGQ9Im0xMCAxNWw1LjE5LTNMMTAgOXptMTEuNTYtNy44M2MuMTMuNDcuMjIgMS4xLjI4IDEuOWMuMDcuOC4xIDEuNDkuMSAyLjA5TDIyIDEyYzAgMi4xOS0uMTYgMy44LS40NCA0LjgzYy0uMjUuOS0uODMgMS40OC0xLjczIDEuNzNjLS40Ny4xMy0xLjMzLjIyLTIuNjUuMjhjLTEuMy4wNy0yLjQ5LjEtMy41OS4xTDEyIDE5Yy00LjE5IDAtNi44LS4xNi03LjgzLS40NGMtLjktLjI1LTEuNDgtLjgzLTEuNzMtMS43M2MtLjEzLS40Ny0uMjItMS4xLS4yOC0xLjljLS4wNy0uOC0uMS0xLjQ5LS4xLTIuMDlMMiAxMmMwLTIuMTkuMTYtMy44LjQ0LTQuODNjLjI1LS45LjgzLTEuNDggMS43My0xLjczYy40Ny0uMTMgMS4zMy0uMjIgMi42NS0uMjhjMS4zLS4wNyAyLjQ5LS4xIDMuNTktLjFMMTIgNWM0LjE5IDAgNi44LjE2IDcuODMuNDRjLjkuMjUgMS40OC44MyAxLjczIDEuNzMiIC8+Cjwvc3ZnPg=="
+                        alt="Youtube" x="0" y="0" width="50" height="50" />
+                </svg></a>
+        </div>
+
+        <div class="footer__author"><b>CRUZ ROJA CHILENA 2024</b> | SITIO WEB DISEÑADO POR <b>FUSION</b>
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>
