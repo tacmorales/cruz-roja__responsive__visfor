@@ -29,8 +29,8 @@
     clamp(2rem, -3.2174rem + 26.087vw, 17rem);
 }
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 .montserrat-regular {
@@ -375,6 +375,7 @@ h4 {
   list-style: none;
   display: flex;
   justify-content: center;
+  align-items: center;
   /* Asegura que los elementos se centren horizontalmente */
   margin: 0;
   padding: 0;
@@ -386,6 +387,12 @@ h4 {
   /* Línea separadora entre enlaces */
   padding: 0 3.2875rem;
   /* Incrementa el padding para añadir espacio a los lados */
+}
+
+@media screen and (max-width: 1145px){
+    .header__menu-item {
+      padding: 0 0.9rem;
+    }
 }
 
 /* Remover borde en el primer enlace */
@@ -784,6 +791,10 @@ h4 {
   align-items: center;
 }
 
+.news__carousel__wrap {
+  position: relative;
+}
+
 .news__items {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -798,6 +809,17 @@ h4 {
   box-sizing: border-box;
   padding: 0 0.5rem;
   overflow: hidden;
+}
+
+@media screen and (max-width: 1366px) {
+    .news__item {
+        flex: 0 0 calc(100% / 2);
+    }
+}
+@media screen and (max-width: 768px) {
+    .news__item {
+        flex: 0 0 calc(100%);
+    }
 }
 
 .news__caption {
@@ -817,6 +839,7 @@ h4 {
   font-size: 1.5rem;
   z-index: 1;
   box-sizing: border-box;
+  text-wrap:pretty;
 }
 
 .news__image {
@@ -831,7 +854,7 @@ h4 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 2.5px 2.5px rgba(9, 10, 15, 0.25);
   color: white;
   border: none;
@@ -841,15 +864,15 @@ h4 {
   font-size: 20px;
   width: 50px;
   height: 50px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .news__button--prev {
-  left: 1rem;
+  left: -3rem;
 }
 
 .news__button--next {
-  right: 1rem;
+  right: -3rem;
 }
 
 /*BOTON FLOTANTE*/
@@ -935,38 +958,37 @@ h4 {
   }
 }
 
-.fixed-footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    display: grid;
-    grid-template-columns: 2fr 2fr 0.8fr;
-    justify-items: stretch;
-    gap: 1rem;
-    padding: 1rem;
-    & .header__cta-button--join,
-    & .header__cta-button--donate,
-    & .button-up{
-        max-width: unset;
-    }
+.fixed-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 2fr 2fr 0.8fr;
+  justify-items: stretch;
+  gap: 1rem;
+  padding: 1rem;
+  & .header__cta-button--join,
+  & .header__cta-button--donate,
+  & .button-up {
+    max-width: unset;
+  }
 
-    & .button-up{
-        place-self: center;
-        padding: 0;
-        position:static;
+  & .button-up {
+    place-self: center;
+    padding: 0;
+    position: static;
+  }
 
-    }
-    
-    .manitos,
-    .chancho{
-        width: fit-content;
-    }
+  .manitos,
+  .chancho {
+    width: fit-content;
+  }
 }
 
 @media screen and (min-width: 769px) {
-    .to-hide2 {
-      display: none;
-    }
+  .to-hide2 {
+    display: none;
   }
+}
