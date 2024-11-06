@@ -27,6 +27,8 @@
   --max-width: 1200px;
   --clamp-padding: clamp(2rem, 1.4783rem + 2.6087vw, 3.5rem)
     clamp(2rem, -3.2174rem + 26.087vw, 17rem);
+  --padding-s: clamp(1rem, 0.6522rem + 1.7391vw, 2rem);
+
 }
 
 * {
@@ -905,12 +907,27 @@ h4 {
 
 /*FOOTER 3 PARTES: TOP FAQ - RRSS - AUTORES*/
 .footer__top {
-  padding: var(--clamp-padding);
+  /* padding: var(--clamp-padding); */
+  padding: var(--padding-s);
   background-color: #c4c4c5;
   justify-content: center;
   display: flex;
   gap: 5rem;
   flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1427px){
+    .footer__top {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 1262px){
+    .footer__top {
+        padding: var(--clamp-padding);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .footer__text {
